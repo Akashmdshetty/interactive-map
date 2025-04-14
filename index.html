@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenStreetMap Interactive Website</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Search Bar Container -->
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search for a location..." />
+        <button id="search-button">Search</button>
+        <div id="autocomplete-suggestions"></div>
+    </div>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Draggable Circle Icon -->
+    <div id="icon-container">
+        <div id="icon-logo">📍</div>
+        <div id="info-popup" class="hidden">
+            <p id="popup-location-name"></p>
+            <p id="popup-location-coordinates"></p>
+            <p id="popup-famous-place"></p>
+            <p id="popup-famous-person"></p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

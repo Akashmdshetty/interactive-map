@@ -1,0 +1,140 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #007bff, #00c4ff); /* Gradient background */
+    color: white; /* Text color for better contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-container {
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
+    border-radius: 8px;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #00c4ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Map Styles */
+#map {
+    height: 70vh;
+    width: 90%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for a polished look */
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Gradient Background with Name */
+body:before {
+    content: "Akash MD";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.1); /* Faint white text for background name */
+    font-weight: bold;
+    z-index: -1; /* Ensures it doesn't interfere with other elements */
+}
+
+/* Autocomplete Suggestions */
+#autocomplete-suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#autocomplete-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+#autocomplete-suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Draggable Icon */
+#icon-container {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: grab;
+    z-index: 1500;
+}
+
+#icon-logo {
+    background-color: #007bff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+#info-popup {
+    position: absolute;
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    top: -150px;
+    right: 0px;
+    padding: 10px;
+    width: 200px;
+    display: none;
+    z-index: 1500;
+}
+
+.hidden {
+    display: none;
+}
