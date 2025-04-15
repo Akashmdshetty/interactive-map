@@ -1,140 +1,152 @@
-/* Global Styles */
+/* Body & Map */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #007bff, #00c4ff); /* Gradient background */
-    color: white; /* Text color for better contrast */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    overflow: hidden;
 }
 
-#search-container {
-    height: 15vh;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-    z-index: 1000;
-    border-radius: 8px;
-}
-
-#search-input {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#search-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #00c4ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#search-button:hover {
-    background-color: #0056b3;
-}
-
-/* Map Styles */
 #map {
-    height: 70vh;
-    width: 90%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for a polished look */
-    border-radius: 10px;
-    margin-top: 10px;
+    height: 100%;
+    width: 100%;
 }
 
-/* Gradient Background with Name */
-body:before {
-    content: "Akash MD";
+/* Background Branding */
+#background-name {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 100px;
-    color: rgba(255, 255, 255, 0.1); /* Faint white text for background name */
+    font-size: 80px;
+    color: rgba(255, 255, 255, 0.05);
+    z-index: -1;
     font-weight: bold;
-    z-index: -1; /* Ensures it doesn't interfere with other elements */
 }
 
-/* Autocomplete Suggestions */
-#autocomplete-suggestions {
+/* Search Bar */
+#search-container {
     position: absolute;
-    top: calc(100% + 5px);
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 300px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    max-height: 200px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1500;
+    color: white;
 }
 
-#autocomplete-suggestions div {
+#search-input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+}
+
+#suggestions-container {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    background: rgb(12, 0, 0);
+    border: 1px solid #0a0000;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1500;
+    display: none;
+}
+
+#suggestions-container div {
     padding: 10px;
     cursor: pointer;
     font-size: 14px;
-    color: #333;
+    border-bottom: 1px solid #120101;
 }
 
-#autocomplete-suggestions div:hover {
-    background-color: #f0f0f0;
+#suggestions-container div:hover {
+    background: #007bff;
+    color: rgb(15, 1, 1);
+}
+
+#search-button {
+    padding: 8px;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 /* Draggable Icon */
 #icon-container {
-    width: 60px;
-    height: 60px;
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    left: 20px; /* Bottom-Left corner */
+    width: 50px;
+    height: 50px;
+    z-index: 1600;
     cursor: grab;
-    z-index: 1500;
 }
 
 #icon-logo {
-    background-color: #007bff;
-    width: 60px;
-    height: 60px;
+    background: #007bff;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
     color: white;
+    font-size: 20px;
     font-weight: bold;
 }
 
+/* Popup */
 #info-popup {
-    position: absolute;
-    background-color: black;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    top: -150px;
-    right: 0px;
-    padding: 10px;
-    width: 200px;
     display: none;
-    z-index: 1500;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: -80px;
+    left: 50px;
+    z-index: 1600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.hidden {
-    display: none;
+/* Sidebar */
+#slider {
+    position: fixed;
+    left: -280px; /* Hidden by default */
+    top: 0;
+    width: 280px;
+    height: 100%;
+    background: #333;
+    color: white;
+    z-index: 2000;
+    transition: all 0.3s ease; /* Smooth slide animation */
+}
+
+#slider-content {
+    padding: 20px;
+}
+
+/* Toggle Button */
+#toggle-slider {
+    position: absolute;
+    right: -40px; /* Positioned next to the sidebar */
+    top: 20px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
 }
