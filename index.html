@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenStreetMap Interactive Website</title>
+    <title>Interactive Map with Features</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Search Bar Container -->
+    <!-- Gradient Background with Name -->
+    <div id="background-name">Akash MD</div>
+
+    <!-- Search Bar -->
     <div id="search-container">
         <input type="text" id="search-input" placeholder="Search for a location..." />
+        <div id="suggestions-container"></div> <!-- Suggestions Container -->
         <button id="search-button">Search</button>
-        <div id="autocomplete-suggestions"></div>
     </div>
 
-    <!-- Map Container -->
+    <!-- Map -->
     <div id="map"></div>
 
-    <!-- Draggable Circle Icon -->
-    <div id="icon-container">
+    <!-- Draggable Icon -->
+    <div id="icon-container" draggable="true">
         <div id="icon-logo">📍</div>
-        <div id="info-popup" class="hidden">
+        <div id="info-popup">
             <p id="popup-location-name"></p>
             <p id="popup-location-coordinates"></p>
-            <p id="popup-famous-place"></p>
-            <p id="popup-famous-person"></p>
+            <p id="popup-detailed-coordinates"></p>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="slider">
+        <button id="toggle-slider">☰</button>
+        <div id="slider-content">
+            <h2>Welcome</h2>
+            <ul id="recent-places"></ul>
+
+            
+            <h2>Developer Info</h2>
+            <div id="developer-info">
+                <p>Created by Akash MD</p>
+                <p>contact by <br>aakashshetty112233@gmail.com</p>
+                <p>Passionate Developer ✨</p>
+            </div>
         </div>
     </div>
 
